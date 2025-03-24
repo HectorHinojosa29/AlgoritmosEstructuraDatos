@@ -14,6 +14,11 @@ public class Prueba {
 				+ "8. Salir ");
 		
 	}
+	public static <T>  void mostrarResultado(T valor) {
+        System.out.println("Resultado: " + valor);
+
+    }
+	
 	public static void main(String[] args) {
 		OperacionesMatBInteger operacionesMatBInteger = new OperacionesMatBInteger();
 		OperacionesMatBDouble operacionesMatBDouble = new OperacionesMatBDouble();
@@ -34,16 +39,27 @@ public class Prueba {
 					System.out.println("Operacion de Enteros o Doubles(E/D):");
 					tipoOperacion=entrada.next();
 					if (tipoOperacion.equals("E") || tipoOperacion.equals("e")) {
-						System.out.println("Ingrese el primer operando 1 y operando 2: ");
-						operandoE1=entrada.nextInt();
-						operandoE2=entrada.nextInt();
-						System.out.println("Resultado: "+operacionesMatBInteger.suma(operandoE1,operandoE2));
+						while (true) {
+							System.out.println("Ingrese el primer operando 1 y operando 2: ");
+							if (entrada.hasNextInt()) {
+								operandoE1=entrada.nextInt();
+								if (entrada.hasNextInt()) {
+								operandoE2=entrada.nextInt();
+								mostrarResultado(operacionesMatBInteger.suma(operandoE1,operandoE2));
+								break;
+								}		
+				            } else {
+				                System.out.println("Ingresá un números entero.");
+				                entrada.next(); 
+				            }
+							
+						}
 						
 					}else if(tipoOperacion.equals("D") || tipoOperacion.equals("d")) {
 						System.out.println("Ingrese el primer operando 1 y operando 2: ");
 						operandoD1=entrada.nextDouble();
 						operandoD2=entrada.nextDouble();
-						System.out.println("Resultado: "+operacionesMatBDouble.suma(operandoD1,operandoD2));
+						mostrarResultado(operacionesMatBDouble.suma(operandoD1,operandoD2));
 					}else System.out.println("Opcion invalida");
 					break;}
 				
@@ -51,16 +67,27 @@ public class Prueba {
 					System.out.println("Operacion de Enteros o Doubles(E/D):");
 					tipoOperacion=entrada.nextLine();
 					if (tipoOperacion.equals("E") || tipoOperacion.equals("e")) {
-						System.out.println("Ingrese el primer operando 1 y operando 2: ");
-						operandoE1=entrada.nextInt();
-						operandoE2=entrada.nextInt();
-						System.out.println("Resultado: "+operacionesMatBInteger.resta(operandoE1,operandoE2));
+						while (true) {
+							System.out.println("Ingrese el primer operando 1 y operando 2: ");
+							if (entrada.hasNextInt()) {
+								operandoE1=entrada.nextInt();
+								if (entrada.hasNextInt()) {
+								operandoE2=entrada.nextInt();
+								mostrarResultado(operacionesMatBInteger.resta(operandoE1,operandoE2));
+								break;
+								}		
+				            } else {
+				                System.out.println("Ingresá un números entero.");
+				                entrada.next(); 
+				            }
+							
+						}
 						
 					}else if(tipoOperacion.equals("D") || tipoOperacion.equals("d")) {
 						System.out.println("Ingrese el primer operando 1 y operando 2: ");
 						operandoD1=entrada.nextDouble();
 						operandoD2=entrada.nextDouble();
-						System.out.println("Resultado: "+operacionesMatBDouble.resta(operandoD1,operandoD2));
+						mostrarResultado(operacionesMatBDouble.resta(operandoD1,operandoD2));
 					}
 					break;}
 				
@@ -69,16 +96,27 @@ public class Prueba {
 					System.out.println("Operacion de Enteros o Doubles(E/D):");
 					tipoOperacion=entrada.nextLine();
 					if (tipoOperacion.equals("E") || tipoOperacion.equals("e")) {
-						System.out.println("Ingrese el primer operando 1 y operando 2: ");
-						operandoE1=entrada.nextInt();
-						operandoE2=entrada.nextInt();
-						System.out.println("Resultado: "+operacionesMatBInteger.producto(operandoE1,operandoE2));
+						while (true) {
+							System.out.println("Ingrese el primer operando 1 y operando 2: ");
+							if (entrada.hasNextInt()) {
+								operandoE1=entrada.nextInt();
+								if (entrada.hasNextInt()) {
+								operandoE2=entrada.nextInt();
+								mostrarResultado(operacionesMatBInteger.producto(operandoE1,operandoE2));
+								break;
+								}		
+				            } else {
+				                System.out.println("Ingresá un números entero.");
+				                entrada.next(); 
+				            }
+							
+						}
 						
 					}else if(tipoOperacion.equals("D") || tipoOperacion.equals("d")) {
 						System.out.println("Ingrese el primer operando 1 y operando 2: ");
 						operandoD1=entrada.nextDouble();
 						operandoD2=entrada.nextDouble();
-						System.out.println("Resultado: "+operacionesMatBDouble.producto(operandoD1,operandoD2));
+						mostrarResultado(operacionesMatBDouble.producto(operandoD1,operandoD2));
 					}
 					break;}
 				
@@ -87,16 +125,40 @@ public class Prueba {
 					System.out.println("Operacion de Enteros o Doubles(E/D):");
 					tipoOperacion=entrada.nextLine();
 					if (tipoOperacion.equals("E") || tipoOperacion.equals("e")) {
-						System.out.println("Ingrese el primer operando 1 y operando 2: ");
-						operandoE1=entrada.nextInt();
-						operandoE2=entrada.nextInt();
-						System.out.println("Resultado: "+operacionesMatBInteger.division(operandoE1,operandoE2));
+						while (true) {
+							System.out.println("Ingrese el primer operando 1 y operando 2: ");
+							if (entrada.hasNextInt()) {
+								operandoE1=entrada.nextInt();
+								if (entrada.hasNextInt()) {
+									operandoE2=entrada.nextInt();
+									if (operandoE2 != 0) {
+										mostrarResultado(operacionesMatBInteger.division(operandoE1,operandoE2));
+										break;
+					                } else {
+					                    System.out.println("❌ El divisor no puede ser cero.");
+					                }
+								
+								}		
+				            } else {
+				                System.out.println("Ingresá un números entero.");
+				                entrada.next(); 
+				            }
+							
+						}
 						
 					}else if(tipoOperacion.equals("D") || tipoOperacion.equals("d")) {
-						System.out.println("Ingrese el primer operando 1 y operando 2: ");
-						operandoD1=entrada.nextDouble();
-						operandoD2=entrada.nextDouble();
-						System.out.println("Resultado: "+operacionesMatBDouble.division(operandoD1,operandoD2));
+						while (true) {
+							System.out.println("Ingrese el primer operando 1 y operando 2: ");
+							operandoD1=entrada.nextDouble();
+							operandoD2=entrada.nextDouble();				
+							if (operandoD2 != 0) {
+								break;
+			                } else {
+			                    System.out.println("El divisor no puede ser cero.");
+			                }
+							
+						}
+						mostrarResultado(operacionesMatBDouble.division(operandoD1,operandoD2));
 					}
 					break;}
 				
@@ -105,16 +167,26 @@ public class Prueba {
 					System.out.println("Operacion de Enteros o Doubles(E/D):");
 					tipoOperacion=entrada.nextLine();
 					if (tipoOperacion.equals("E") || tipoOperacion.equals("e")) {
-						System.out.println("Ingrese el primer operando 1 y operando 2: ");
-						operandoE1=entrada.nextInt();
-						operandoE2=entrada.nextInt();
-						System.out.println("Resultado: "+operacionesMatBInteger.potencia(operandoE1,operandoE2));
+						while (true) {
+							System.out.println("Ingrese el primer operando 1 y operando 2: ");
+							if (entrada.hasNextInt()) {
+								operandoE1=entrada.nextInt();
+								if (entrada.hasNextInt()) {
+								operandoE2=entrada.nextInt();
+								mostrarResultado(operacionesMatBInteger.potencia(operandoE1,operandoE2));break;
+								}		
+				            } else {
+				                System.out.println("Ingresá un números entero.");
+				                entrada.next(); 
+				            }
+							
+						}
 						
 					}else if(tipoOperacion.equals("D") || tipoOperacion.equals("d")) {
 						System.out.println("Ingrese el primer operando 1 y operando 2: ");
 						operandoD1=entrada.nextDouble();
 						operandoD2=entrada.nextDouble();
-						System.out.println("Resultado: "+operacionesMatBDouble.potencia(operandoD1,operandoD2));
+						mostrarResultado(operacionesMatBDouble.potencia(operandoD1,operandoD2));
 					}
 					break;}
 				
@@ -122,14 +194,14 @@ public class Prueba {
 				case 6:{
 						System.out.println("Ingrese el operando: ");
 						operandoD1=entrada.nextDouble();
-						System.out.println("Resultado: "+operacionesMatBDouble.raizCuad(operandoD1));
+						mostrarResultado(operacionesMatBDouble.raizCuad(operandoD1));
 					
 					break;}
 					
 				case 7:{
 						System.out.println("Ingrese el operando: ");
 						operandoD1=entrada.nextDouble();
-						System.out.println("Resultado: "+operacionesMatBDouble.raizCubi(operandoD1));
+						mostrarResultado(operacionesMatBDouble.raizCubi(operandoD1));
 					
 					break;}
 				
